@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Serverless hisoblagich</title>
+  <style>
+    body{font:16px Arial,sans-serif;background:#f2f6fb;color:#17324d;margin:0;padding:32px}
+    main{max-width:640px;margin:48px auto;background:white;padding:32px;border-radius:16px;box-shadow:0 8px 28px #1232}
+    h1{color:#175c80}label,input,button{display:block;width:100%;margin:12px 0}
+    input,button{box-sizing:border-box;padding:12px;border:1px solid #b8c8d8;border-radius:8px;font-size:16px}
+    button{background:#176b87;color:white;border:0;cursor:pointer}pre{white-space:pre-wrap;background:#f4f8fb;padding:14px;border-radius:8px}
+  </style>
+</head>
+<body><main>
+  <h1>Serverless hisoblagich</h1>
+  <p>Qiymatni kiriting. Hisoblash bulutdagi alohida funksiya orqali bajariladi.</p>
+  <label for="amount">Qiymat (so‘m)</label>
+  <input id="amount" type="number" min="0" step="100" value="100000">
+  <button id="calculate">12% sinov stavkasi bilan hisoblash</button>
+  <pre id="result">Natija shu yerda ko‘rinadi.</pre>
+  <p><small>Bu o‘quv namunasidir; amaldagi soliq hisoboti uchun mo‘ljallanmagan.</small></p>
+</main>
+<script>
+  document.getElementById('calculate').addEventListener('click', async () => {
+    const amount = Number(document.getElementById('amount').value);
+    const result = document.getElementById('result');
+    result.textContent = 'Hisoblanmoqda...';
+    try {
+      const response = await fetch('/api/calculate', {
+        method: 'POST', headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({amount})
+      });
+      const data = await response.json();
+      result.textContent = response.ok
+        ? `Asosiy summa: ${data.amount.toLocaleString('uz-UZ')} so‘m\n12% sinov qiymati: ${data.tax.toLocaleString('uz-UZ')} so‘m\nJami: ${data.total.toLocaleString('uz-UZ')} so‘m`
+        : data.error;
+    } catch (_) {
+      result.textContent = 'Funksiyaga ulanib bo‘lmadi. Deploy holatini tekshiring.';
+    }
+  });
+</script></body>
+</html>
+
