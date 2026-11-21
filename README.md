@@ -1,67 +1,61 @@
-# bulutli-texnologiyalar-1
-Lokal dasturni bulutga joylaştiriş böyiça mustaqil iş
-# Bulutli texnologiyalar bo‘yicha mustaqil ish
+# Bulutli texnologiyalar bo‘yicha uchta mustaqil ish
 
-## 1-mustaqil ish
+Ushbu loyihada topshiriq varag‘idagi uch mavzu bitta izchil misolda yoritiladi. Birinchi ishda lokal sahifa GitHub Pages’da joylashtiriladi. Ikkinchisida Flask ilovasi Docker konteynerga qadoqlanib, GitHub Actions orqali tekshiriladi va Render’ga yetkazishga tayyorlanadi. Uchinchisida hisob-kitob vazifasi Vercel Serverless Python funksiyasiga ajratiladi.
 
-### Mavzu
-An’anaviy lokal muhitda ishlayotgan dasturni bulutli infratuzilmaga joylashtirish va xizmat modellarini taqqoslash
+## 1-mustaqil ish. Lokal dasturni bulutga ko‘chirish
 
-### Ishning maqsadi
-Ushbu ishning maqsadi lokal kompyuterda ishlaydigan dasturni bulutga ko‘chirishni o‘rganish va bulutli xizmatlarning IaaS, PaaS hamda SaaS modellarini taqqoslashdan iborat.
+### Nazariy qism
+Bulutli xizmatlar hisoblash resurslarini internet orqali talabga qarab taqdim etadi. IaaS’da foydalanuvchi virtual server va operatsion tizimni ko‘proq boshqaradi; PaaS’da provayder dastur ishga tushadigan platformani yuritadi; SaaS’da foydalanuvchi internet orqali tayyor dasturdan foydalanadi. Lokal serverda apparat va dastur muhitini tashkilotning o‘zi boshqarsa, bulutda ayrim vazifalar xizmat ko‘rsatuvchi tomonga o‘tadi.
 
-### Bulutli texnologiya haqida
-Bulutli texnologiya internet orqali server, ma’lumot saqlash joyi, tarmoq va dasturiy xizmatlardan foydalanish imkonini beradi. Bunda foydalanuvchi serverni o‘zi sotib olishi shart emas. U kerakli hisoblash resurslarini bulut xizmati orqali tanlab, masofadan foydalanishi mumkin.
-
-Lokal muhitda dastur odatda bitta kompyuterda yoki tashkilotning ichki serverida ishlaydi. Bunday holatda qurilmaning ishlashi, saqlash joyi va elektr ta’minoti muhim hisoblanadi. Dastur bulutga ko‘chirilganda esa unga internet orqali murojaat qilish, zarurat tug‘ilganda resurslarni oshirish yoki kamaytirish mumkin.
-
-### Bulutli xizmat modellari
-
-**IaaS (Infrastructure as a Service)** — infratuzilmani xizmat sifatida taqdim etish modeli. Foydalanuvchi virtual server, saqlash joyi va tarmoqdan foydalanadi. Operatsion tizimni sozlash, dasturiy muhitni tayyorlash va ilovani boshqarish ko‘pincha foydalanuvchining zimmasida bo‘ladi. Bu model infratuzilmani ko‘proq nazorat qilish kerak bo‘lganda qulay.
-
-**PaaS (Platform as a Service)** — dastur yaratish va ishga tushirish uchun tayyor platformani taqdim etish modeli. Server va operatsion tizimni boshqarish ishlarining katta qismini xizmat ko‘rsatuvchi tomon bajaradi. Dasturchi asosan dastur kodi va uning sozlamalariga e’tibor qaratadi.
-
-**SaaS (Software as a Service)** — internet orqali foydalaniladigan tayyor dasturiy xizmat modeli. Foydalanuvchi server yoki dasturni o‘zi o‘rnatib boshqarmaydi. U odatda brauzer yoki maxsus dastur orqali xizmatdan foydalanadi. Elektron pochta va onlayn hujjat xizmatlari bunga misol bo‘ladi.
-
-| Model | Boshqaruv taqsimoti | Misol |
+| Model | Mas’uliyat taqsimoti | Mos foydalanish holati |
 |---|---|---|
-| IaaS | Foydalanuvchi virtual server va undagi dasturiy muhitni boshqaradi | Bulutdagi virtual mashina |
-| PaaS | Provayder platformani, foydalanuvchi esa dastur va kodni boshqaradi | Ilovani joylashtirish platformasi |
-| SaaS | Provayder tayyor dasturni boshqaradi, foydalanuvchi undan foydalanadi | Onlayn pochta xizmati |
+| IaaS | Foydalanuvchi operatsion tizim, runtime va ilovani boshqaradi | Server sozlamalari ustidan nazorat kerak bo‘lsa |
+| PaaS | Provayder platformani, foydalanuvchi ilovani boshqaradi | Kodni tez joylashtirish muhim bo‘lsa |
+| SaaS | Provayder tayyor dasturni taqdim etadi | Tayyor dasturiy xizmat kerak bo‘lsa |
 
-### Modellarning farqi
-IaaS foydalanuvchiga ko‘proq sozlash va nazorat imkonini beradi, lekin server hamda operatsion tizimni boshqarish uchun qo‘shimcha bilim talab etadi. PaaS dastur ishlab chiqish va ishga tushirishni yengillashtiradi, biroq foydalanuvchi tanlangan platformaning imkoniyatlariga moslashishi kerak. SaaS’dan foydalanish oson, ammo foydalanuvchi xizmatning ichki infratuzilmasini boshqara olmaydi.
+### Amaliy qism
+`index.html` sahifasi HTML, CSS va JavaScript’dan tuzilgan. JavaScript `window.location.hostname` orqali sahifa qayerda ochilganini aniqlab, lokal yoki bulutli muhit belgisini chiqaradi. GitHub Pages sozlamasida `main` branch va asosiy papka (`/(root)`) tanlandi.
 
-Mavjud dasturni bulutga ko‘chirishda IaaS yoki PaaS modellari ko‘proq mos kelishi mumkin. SaaS esa, odatda, o‘zimiz yaratgan dasturni joylashtirish uchun emas, balki tayyor dasturiy xizmatdan foydalanish uchun tanlanadi.
+**Ishlayotgan sahifa:** https://raxmonovdilshodbek220-alt.github.io/bulutli-texnologiyalar-1/
 
-### Bulutga ko‘chirishda e’tibor beriladigan jihatlar
-Dasturni ko‘chirishdan avval uning qanday resurslardan foydalanishi va ma’lumotlarni qayerda saqlashi aniqlanadi. Shundan so‘ng mos bulut xizmati tanlanib, dastur sozlanadi va internet orqali ishlashi tekshiriladi. Maxfiy ma’lumotlarni dastur kodiga yozmaslik, kirishni zarur ruxsatlar bilan cheklash va ma’lumotlarning zaxira nusxalarini saqlash kerak.
+Bu loyiha statik saytdir. GitHub Pages HTML, CSS va JavaScript fayllarini joylaydi, lekin Python kabi server tomonida ishlaydigan kodni bajarmaydi. Shu sababli ushbu amaliy misolda backend server ishlatilmagan.
 
-### Xulosa
-Ushbu nazariy qismda bulutli texnologiyaning mazmuni hamda IaaS, PaaS va SaaS xizmat modellari ko‘rib chiqildi. Ularning asosiy farqi server, platforma va tayyor dasturiy ta’minotni foydalanuvchi hamda xizmat ko‘rsatuvchi tomon qanday boshqarishidadir. Keyingi amaliy qismda lokal muhitda ishlaydigan namunaviy dasturni bulutga joylashtirish usuli ko‘rib chiqiladi.
+## 2-mustaqil ish. Bir xil muhit va avtomatik yetkazib berish
 
-### Foydalanilgan manba
-NIST, *The NIST Definition of Cloud Computing, SP 800-145*: https://csrc.nist.gov/pubs/sp/800/145/final
-## Amaliy qism
+### Nazariy qism
+Bir xil kod turli kompyuterlarda turlicha ishlashiga Python versiyasi, kutubxona versiyasi yoki tizim sozlamalari ta’sir qilishi mumkin. Docker ilova va kerakli kutubxonalarni konteyner tasviriga yig‘adi. Virtual mashinada alohida operatsion tizim ishlaydi; konteyner esa asosiy tizim yadrosidan foydalanadi va odatda yengilroq bo‘ladi.
 
-### Loyiha tavsifi
-Amaliy ishda lokal muhitda ham, bulutda ham ochiladigan `index.html` sahifasi yaratildi. Sahifaning tuzilishi HTML’da, ko‘rinishi CSS’da, ishlayotgan muhitийг ялгах хэсэг нь JavaScript дээр хийгдсэн.
+CI/CD — koddagi o‘zgarishlarni avtomatik yig‘ish, tekshirish va joylashtirish jarayoni. CI bosqichida konteyner tasviri yaratiladi va xizmatning javobi tekshiriladi. CD bosqichida muvaffaqiyatli o‘zgarish bulut muhitiga yetkaziladi.
 
-### Lokal muhitda tekshirish
-Sahifani lokal шалгахын тулд `index.html` файлыг компьютерт татаж авч, браузераар нээнэ. Сайт локал файл хэлбэрээр нээгдэхэд **“Lokal muhit”** гэсэн тэмдэглэгээ гарах ёстой. JavaScript нь `window.location.hostname` утгыг шалгаж, `localhost`, `127.0.0.1` эсвэл хоосон host байвал локал гэж үзнэ.
+### Amaliy qism
+`ish2/` papkasida Flask API, Dockerfile va Compose sozlamasi mavjud. API narx va miqdorni olib, jami summani hisoblaydi. GitHub Actions workflow mos commit kelganda konteyner tasvirini quradi, ishga tushiradi va `/health` hamda hisoblash javobini tekshiradi. Muvaffaqiyatli workflow tasvirni GitHub Container Registry’ga yuboradi. `render.yaml` Render’da Docker servis yaratish va CI tekshiruvlaridan so‘ng deploy qilish uchun sozlangan.
 
-### Bulutga joylashtirish
-`index.html` fayli GitHub repository’ning asosiy papkasiga joylandi. **Settings → Pages** bo‘limida `main` branch va `/(root)` papkasi tanlandi. GitHub Pages faylni joylab, saytni internet orqali ochiladigan qildi.
+```bash
+cd ish2
+docker compose up --build
+```
 
-### Olingan natija
-Sayt quyidagi manzilda ishlamoqda:
+### Kod izohi
+`Dockerfile` Python muhiti, kutubxonalar va ishga tushirish buyrug‘ini image’ga kiritadi. `compose.yaml` ilovani lokal kompyuterda bir buyruq bilan ishga tushiradi. GitHub Actions workflow esa image’ni qurib, `/health` va `/hisobla` manzillarini tekshiradi. Render Dockerfile asosida shu ilovani internetga chiqarishi mumkin.
 
-https://raxmonovdilshodbek220-alt.github.io/bulutli-texnologiyalar-1/
+## 3-mustaqil ish. Monolitni serverless xizmat bilan modernizatsiya qilish
 
-Sayt ochilganda **“Bulutli muhit”** belgisi, GitHub domeni va HTTPS ulanishi ko‘rinadi. JavaScript domen nomini aniqlab, joriy muhit haqidagi ma’lumotni sahifaga chiqaradi.
+### Nazariy qism
+Monolit ilovada asosiy qismlar bitta dastur tarkibida ishlaydi. Ayrim vazifalarni alohida xizmatga chiqarish ularni mustaqil yangilash va masshtablash imkonini beradi, biroq tarmoq aloqasi, kuzatuv va xatolarni boshqarishni murakkablashtiradi. Serverless funksiyaning infratuzilmasini provayder boshqaradi; funksiya odatda HTTP so‘rovi yoki boshqa hodisa kelganda ishga tushadi.
 
-### Cheklov
-Ushbu loyiha HTML, CSS va JavaScript’dan tuzilgan statik saytdir. GitHub Pages bunday sahifalarni joylashtiradi, ammo Python yoki boshqa server tomonida ishlaydigan dasturni ishga tushirmaydi. Shu sababli ushbu amaliy misolda backend server ishlatilmagan.
+### Amaliy qism
+`ish3/index.html` summa kiritish uchun veb-sahifa. `ish3/api/calculate.py` mustaqil Python funksiyasi so‘rovni tekshiradi, o‘quv uchun belgilangan 12 foizlik qiymatni hisoblaydi va JSON javob qaytaradi. Vercel’da loyihani joylashtirishda root papka sifatida `ish3` tanlanadi; GitHub bilan ulansa, yangi commitlar avtomatik deploy qilinadi.
 
-### Amaliy qism bo‘yicha xulosa
-Amaliy ish davomida sahifa GitHub Pages’ga joylashtirildi va uning bulut domeni orqali ochilishi tekshirildi. Natijada lokal fayl хэлбэрээр болон үүлэн хостинг дээр нээхэд орчны мэдээллийг ялгаж харуулах боломжтой боллоо.
+**Eslatma:** 12 foiz ushbu namunaning hisoblash uchun tanlangan qiymatidir. Bu amaldagi soliq bo‘yicha huquqiy yoki moliyaviy tavsiya emas.
+
+## Xulosa
+Uchta ish orqali lokal joylashtirish, konteyner yordamida muhitni bir xil qilish, avtomatik build va serverless funksiyaning vazifasi ko‘rib chiqildi. Birinchi loyiha GitHub Pages’da ishlayapti. Ikkinchi va uchinchi loyihalarning alohida hosting xizmatlarida ishga tushirilgan holati yakuniy hisobotda mavjud bo‘lsa, ularning manzillari bilan ko‘rsatiladi.
+
+## Foydalanilgan manbalar
+1. NIST SP 800-145, *The NIST Definition of Cloud Computing*: https://csrc.nist.gov/pubs/sp/800/145/final
+2. GitHub Pages, *What is GitHub Pages?*: https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages
+3. Docker Docs, *Use Compose in production*: https://docs.docker.com/compose/how-tos/production/
+4. GitHub Docs, *Deploying your website automatically*: https://docs.github.com/en/get-started/start-your-journey/deploying-your-website-automatically
+5. Render, *Blueprint YAML Reference*: https://render.com/docs/blueprint-spec
+6. Vercel, *Python Runtime*: https://vercel.com/docs/functions/runtimes/python
+
