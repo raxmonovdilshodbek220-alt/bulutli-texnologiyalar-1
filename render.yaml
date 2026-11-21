@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: bulutli-texnologiyalar-ish2
+    runtime: docker
+    plan: free
+    region: frankfurt
+    dockerfilePath: ./ish2/Dockerfile
+    dockerContext: ./ish2
+    healthCheckPath: /health
+    autoDeployTrigger: checksPass
+
