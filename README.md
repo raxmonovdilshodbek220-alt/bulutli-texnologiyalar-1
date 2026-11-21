@@ -42,3 +42,26 @@ Ushbu nazariy qismda bulutli texnologiyaning mazmuni hamda IaaS, PaaS va SaaS xi
 
 ### Foydalanilgan manba
 NIST, *The NIST Definition of Cloud Computing, SP 800-145*: https://csrc.nist.gov/pubs/sp/800/145/final
+## Amaliy qism
+
+### Loyiha tavsifi
+Amaliy ishda lokal muhitda ham, bulutda ham ochiladigan `index.html` sahifasi yaratildi. Sahifaning tuzilishi HTML’da, ko‘rinishi CSS’da, ishlayotgan muhitийг ялгах хэсэг нь JavaScript дээр хийгдсэн.
+
+### Lokal muhitda tekshirish
+Sahifani lokal шалгахын тулд `index.html` файлыг компьютерт татаж авч, браузераар нээнэ. Сайт локал файл хэлбэрээр нээгдэхэд **“Lokal muhit”** гэсэн тэмдэглэгээ гарах ёстой. JavaScript нь `window.location.hostname` утгыг шалгаж, `localhost`, `127.0.0.1` эсвэл хоосон host байвал локал гэж үзнэ.
+
+### Bulutga joylashtirish
+`index.html` fayli GitHub repository’ning asosiy papkasiga joylandi. **Settings → Pages** bo‘limida `main` branch va `/(root)` papkasi tanlandi. GitHub Pages faylni joylab, saytni internet orqali ochiladigan qildi.
+
+### Olingan natija
+Sayt quyidagi manzilda ishlamoqda:
+
+https://raxmonovdilshodbek220-alt.github.io/bulutli-texnologiyalar-1/
+
+Sayt ochilganda **“Bulutli muhit”** belgisi, GitHub domeni va HTTPS ulanishi ko‘rinadi. JavaScript domen nomini aniqlab, joriy muhit haqidagi ma’lumotni sahifaga chiqaradi.
+
+### Cheklov
+Ushbu loyiha HTML, CSS va JavaScript’dan tuzilgan statik saytdir. GitHub Pages bunday sahifalarni joylashtiradi, ammo Python yoki boshqa server tomonida ishlaydigan dasturni ishga tushirmaydi. Shu sababli ushbu amaliy misolda backend server ishlatilmagan.
+
+### Amaliy qism bo‘yicha xulosa
+Amaliy ish davomida sahifa GitHub Pages’ga joylashtirildi va uning bulut domeni orqali ochilishi tekshirildi. Natijada lokal fayl хэлбэрээр болон үүлэн хостинг дээр нээхэд орчны мэдээллийг ялгаж харуулах боломжтой боллоо.
