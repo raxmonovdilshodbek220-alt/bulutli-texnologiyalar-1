@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bulutli texnologiyalar loyihasi</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 32px 16px;
+      font-family: Arial, sans-serif;
+      background: #f1f5f9;
+      color: #1e293b;
+    }
+
+    main {
+      max-width: 760px;
+      margin: 40px auto;
+      padding: 32px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 28px #0f172a18;
+    }
+
+    h1 {
+      margin-top: 0;
+      color: #155e75;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 20px;
+      background: #e2e8f0;
+      font-weight: bold;
+    }
+
+    .details {
+      margin-top: 24px;
+      padding: 16px;
+      border-radius: 10px;
+      background: #f8fafc;
+      overflow-wrap: anywhere;
+    }
+
+    li {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Bulutli texnologiyalar</h1>
+    <p>
+      Ushbu sahifa dasturning lokal kompyuterda yoki bulutli muhitda
+      ishlayotganini ko‘rsatadi.
+    </p>
+
+    <h2>Ishlayotgan muhit</h2>
+    <p id="mode" class="badge">Aniqlanmoqda...</p>
+
+    <div class="details">
+      <p><strong>Sayt manzili:</strong> <span id="host"></span></p>
+      <p><strong>Ulanish turi:</strong> <span id="protocol"></span></p>
+    </div>
+
+    <h2>Loyiha haqida</h2>
+    <ul>
+      <li>HTML sahifaning tuzilishini yaratadi.</li>
+      <li>CSS sahifaning ko‘rinishini belgilaydi.</li>
+      <li>JavaScript joriy muhitni aniqlaydi.</li>
+      <li>GitHub Pages sahifani internet orqali ochishga xizmat qiladi.</li>
+    </ul>
+  </main>
+
+  <script>
+    const host = window.location.hostname;
+    const isLocal =
+      host === "" ||
+      host === "localhost" ||
+      host === "127.0.0.1";
+
+    const modeElement = document.getElementById("mode");
+
+    if (isLocal) {
+      modeElement.textContent = "Lokal muhit";
+      modeElement.style.background = "#fef3c7";
+    } else {
+      modeElement.textContent = "Bulutli muhit";
+      modeElement.style.background = "#dcfce7";
+    }
+
+    document.getElementById("host").textContent =
+      host || "Lokal fayl";
+
+    document.getElementById("protocol").textContent =
+      window.location.protocol;
+  </script>
+</body>
+</html>
