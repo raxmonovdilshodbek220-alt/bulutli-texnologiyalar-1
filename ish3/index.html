@@ -5,11 +5,20 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Serverless hisoblagich</title>
   <style>
-    body{font:16px Arial,sans-serif;background:#f2f6fb;color:#17324d;margin:0;padding:32px}
-    main{max-width:640px;margin:48px auto;background:white;padding:32px;border-radius:16px;box-shadow:0 8px 28px #1232}
-    h1{color:#175c80}label,input,button{display:block;width:100%;margin:12px 0}
-    input,button{box-sizing:border-box;padding:12px;border:1px solid #b8c8d8;border-radius:8px;font-size:16px}
-    button{background:#176b87;color:white;border:0;cursor:pointer}pre{white-space:pre-wrap;background:#f4f8fb;padding:14px;border-radius:8px}
+    :root{--ink:#172554;--muted:#475569;--accent:#4f46e5;--border:#c7d2fe;--soft:#f5f3ff}
+    *{box-sizing:border-box}
+    body{font:16px Arial,sans-serif;background:linear-gradient(135deg,#eff6ff,#f5f3ff);color:var(--ink);margin:0;padding:32px}
+    main{max-width:640px;margin:48px auto;background:#fff;padding:32px;border:1px solid #e0e7ff;border-radius:18px;box-shadow:0 16px 40px rgba(49,46,129,.12)}
+    h1{color:#3730a3;margin-top:0}
+    p{color:var(--muted);line-height:1.6}
+    label,input,button{display:block;width:100%;margin:12px 0}
+    input,button{padding:13px 14px;border:1px solid var(--border);border-radius:10px;font-size:16px}
+    input{color:var(--ink);background:#fff}
+    input:focus{outline:3px solid rgba(99,102,241,.18);border-color:#6366f1}
+    button{background:var(--accent);color:#fff;border:0;cursor:pointer;font-weight:700;transition:background .15s,transform .15s}
+    button:hover{background:#4338ca;transform:translateY(-1px)}
+    pre{white-space:pre-wrap;background:var(--soft);color:#312e81;padding:16px;border:1px solid #e0e7ff;border-radius:10px}
+    small{color:#64748b}
   </style>
 </head>
 <body><main>
