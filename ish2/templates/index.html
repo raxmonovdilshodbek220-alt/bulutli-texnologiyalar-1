@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Buyurtma hisoblagichi</title>
+  <style>
+    body{margin:0;padding:32px 16px;background:#f1f5f9;color:#1e293b;font:16px Arial,sans-serif}
+    main{max-width:680px;margin:42px auto;background:white;padding:32px;border-radius:16px;box-shadow:0 8px 28px #0f172a18}
+    h1{color:#155e75}label{display:block;margin-top:16px}input,button{width:100%;padding:12px;margin-top:8px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;box-sizing:border-box}
+    button{background:#176b87;color:white;border:0;cursor:pointer;margin-top:20px}pre{padding:16px;background:#f8fafc;border-radius:8px;white-space:pre-wrap}
+  </style>
+</head>
+<body><main>
+  <h1>Buyurtma hisoblagichi</h1>
+  <p>Mahsulot narxi va miqdorini kiriting. Natija Flask API orqali hisoblanadi.</p>
+  <label for="narx">Bir dona narxi (so‘m)</label><input id="narx" type="number" min="0" value="12500">
+  <label for="miqdor">Miqdori</label><input id="miqdor" type="number" min="1" value="2">
+  <button id="hisobla">Jami summani hisoblash</button>
+  <pre id="natija">Natija shu yerda ko‘rinadi.</pre>
+</main>
+<script>
+ document.getElementById('hisobla').addEventListener('click', async () => {
+   const natija = document.getElementById('natija');
+   const response = await fetch('/hisobla', {method:'POST',headers:{'Content-Type':'application/json'},
+     body:JSON.stringify({narx:document.getElementById('narx').value,miqdor:document.getElementById('miqdor').value})});
+   const data = await response.json();
+   natija.textContent = response.ok ? `Jami: ${Number(data.jami).toLocaleString('uz-UZ')} ${data.valyuta}` : data.xato;
+ });
+</script></body></html>
+
